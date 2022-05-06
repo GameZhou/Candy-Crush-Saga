@@ -169,11 +169,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    //Dictionary<CandyControl, List<Vector2>> candyDownPosList = new Dictionary<CandyControl, List<Vector2>>();
-    //void AddCandyDownPos(CandyControl candy,Vector2 pos)
-    //{
-    //    candyDownPosList.ContainsKey(candy);
-    //}
+    
     public void AnimaPlayEnd()
     {
         animaCounter--;
@@ -374,7 +370,7 @@ public class GameManager : MonoBehaviour
          * 先检查candy0是全消，candy1是任何类型的情况。
          * 再检查candy1是全消,candy0是其他类型的情况（已知candy0不是全消）。
          * 排除以上条件之后，再处理其他两个都是特殊糖果的情况。
-         * 最后剩下两个糖果不都是普通糖果的情况（可能一个是特殊也可能都不特殊）。
+         * 最后剩下两个糖果不都是普通糖果的情况。
         */
         bool found = false;
         //被交换的两个糖果
@@ -983,11 +979,11 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        //--------处理合成糖果结果---------//   玩家操作位置不知道为啥歪了。
+        //--------处理合成糖果结果---------//   
         createInfoList.Clear();
         int createX, createY, createColor;
-        bool isPlayPos0 = false;//是玩家操作的位置
-        bool isPlayPos1 = false;//是玩家操作的位置
+        bool isPlayPos0 = false;
+        bool isPlayPos1 = false;
         foreach (var item in createCandyDic)
         {
             if (needCheck)
@@ -1103,7 +1099,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        //还需要向左下和右下，逻辑差不多，需要依次进行，先不写。
+        
         return isFall;
     }
 }
